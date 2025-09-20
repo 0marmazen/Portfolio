@@ -156,4 +156,11 @@ for (let i = 0; i < navigationLinks.length; i++) {
     }
 
   });
+
 }
+// courses auto start at 20%
+window.addEventListener("load", () => {
+  const list = document.querySelector(".clients-list");
+  list.scrollLeft = list.scrollWidth * 0.2; // يبدأ من 20%
+});
+
