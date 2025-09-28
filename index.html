@@ -810,34 +810,54 @@ I’m enthusiastic about Penetration Testing, Networking, and System Security, a
 </li>
 
 
-      <!-- في index.html -->
-<a href="#" class="portfolio-card" data-title="Machine 1" data-content="<h2>Enumeration</h2><pre><code>nmap -sC ...</code></pre>">Machine 1</a>
+<section class="writeups"><!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-<!-- Modal -->
-<div id="modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6);">
-  <div style="max-width:900px; margin:40px auto; background:#fff; padding:20px; position:relative;">
-    <button id="close">Close</button>
-    <h1 id="modalTitle"></h1>
-    <div id="modalBody"></div>
-  </div>
-</div>
+  <h3 class="h3 writeups-title">TryHackMe Write-ups</h3>
 
-<script>
-document.addEventListener('click', function(e){
-  const card = e.target.closest('.portfolio-card');
-  if(card){
-    e.preventDefault();
-    const title = card.dataset.title || 'Write-up';
-    const content = card.dataset.content || '<p>No content</p>';
-    document.getElementById('modalTitle').innerText = title;
-    document.getElementById('modalBody').innerHTML = content;
-    document.getElementById('modal').style.display = 'block';
-  }
-});
-document.getElementById('close').addEventListener('click', function(){ document.getElementById('modal').style.display = 'none'; });
-</script>
+  <ul class="writeups-list has-scrollbar">
 
+    <li class="writeup-item">
+      <div class="content-card">
 
+        <figure class="writeup-avatar-box">
+          <img src="./assets/images/machine1.png" alt="Machine 1" width="60">
+        </figure>
+
+        <h4 class="h4 writeup-item-title">Machine 1</h4>
+
+        <div class="writeup-text">
+          <p>
+            غرفة Basic Pentesting.  
+            <a href="writeups/machine1.html" target="_blank">اقرأ الـ Write-up</a>
+          </p>
+        </div>
+
+      </div>
+    </li>
+
+    <li class="writeup-item">
+      <div class="content-card">
+
+        <figure class="writeup-avatar-box">
+          <img src="./assets/images/machine2.png" alt="Machine 2" width="60">
+        </figure>
+
+        <h4 class="h4 writeup-item-title">Machine 2</h4>
+
+        <div class="writeup-text">
+          <p>
+            غرفة Another Challenge.  
+            <a href="writeups/machine2.html" target="_blank">اقرأ الـ Write-up</a>
+          </p>
+        </div>
+
+      </div>
+    </li>
+
+  </ul>
+
+</section>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
       
 <li class="project-item active" data-filter-item data-category="network">
@@ -1176,6 +1196,7 @@ document.getElementById('close').addEventListener('click', function(){ document.
 </body>
 
 </html>
+
 
 
 
