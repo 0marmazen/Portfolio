@@ -807,6 +807,37 @@ I’m enthusiastic about Penetration Testing, Networking, and System Security, a
     <p class="project-category">CTF combining web vulnerabilities and Linux privilege escalation.</p>
   </a>
 </li>
+<!-- زر/لينك الكارت -->
+<a href="#" class="portfolio-card" data-md="writeups/machine1.md">Machine 1</a>
+
+<!-- مكان العرض (مثال: مودال أو div جانبي) -->
+<div id="writeupModal" style="display:none;">
+  <button id="closeBtn">Close</button>
+  <div id="writeupContent"></div>
+</div>
+
+<script>
+document.addEventListener('click', async (e) => {
+  const card = e.target.closest('.portfolio-card');
+  if (!card) return;
+  e.preventDefault();
+  const mdPath = card.dataset.md; // path to markdown file
+  try {
+    const res = await fetch(mdPath);
+    const md = await res.text();
+    const html = marked.parse(md);
+    document.getElementById('writeupContent').innerHTML = html;
+    document.getElementById('writeupModal').style.display = 'block';
+  } catch (err) {
+    alert('حدث خطأ في تحميل الـ writeup');
+    console.error(err);
+  }
+});
+
+document.getElementById('closeBtn').addEventListener('click', () => {
+  document.getElementById('writeupModal').style.display = 'none';
+});
+</script>
 
 <li class="project-item active" data-filter-item data-category="network">
   <a href="#">
@@ -1140,10 +1171,12 @@ I’m enthusiastic about Penetration Testing, Networking, and System Security, a
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
 </body>
 
 </html>
+
 
 
 
