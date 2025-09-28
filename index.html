@@ -808,38 +808,38 @@ I’m enthusiastic about Penetration Testing, Networking, and System Security, a
     <p class="project-category">CTF combining web vulnerabilities and Linux privilege escalation.</p>
   </a>
 </li>
-<!-- زر/لينك الكارت -->
-<a href="#" class="portfolio-card" data-md="writeups/machine1.md">Machine 1</a>
 
-<!-- مكان العرض (مثال: مودال أو div جانبي) -->
-<div id="writeupModal" style="display:none;">
-  <button id="closeBtn">Close</button>
-  <div id="writeupContent"></div>
+
+      <!-- في index.html -->
+<a href="#" class="portfolio-card" data-title="Machine 1" data-content="<h2>Enumeration</h2><pre><code>nmap -sC ...</code></pre>">Machine 1</a>
+
+<!-- Modal -->
+<div id="modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6);">
+  <div style="max-width:900px; margin:40px auto; background:#fff; padding:20px; position:relative;">
+    <button id="close">Close</button>
+    <h1 id="modalTitle"></h1>
+    <div id="modalBody"></div>
+  </div>
 </div>
 
 <script>
-document.addEventListener('click', async (e) => {
+document.addEventListener('click', function(e){
   const card = e.target.closest('.portfolio-card');
-  if (!card) return;
-  e.preventDefault();
-  const mdPath = card.dataset.md; // path to markdown file
-  try {
-    const res = await fetch(mdPath);
-    const md = await res.text();
-    const html = marked.parse(md);
-    document.getElementById('writeupContent').innerHTML = html;
-    document.getElementById('writeupModal').style.display = 'block';
-  } catch (err) {
-    alert('حدث خطأ في تحميل الـ writeup');
-    console.error(err);
+  if(card){
+    e.preventDefault();
+    const title = card.dataset.title || 'Write-up';
+    const content = card.dataset.content || '<p>No content</p>';
+    document.getElementById('modalTitle').innerText = title;
+    document.getElementById('modalBody').innerHTML = content;
+    document.getElementById('modal').style.display = 'block';
   }
 });
-
-document.getElementById('closeBtn').addEventListener('click', () => {
-  document.getElementById('writeupModal').style.display = 'none';
-});
+document.getElementById('close').addEventListener('click', function(){ document.getElementById('modal').style.display = 'none'; });
 </script>
 
+
+
+      
 <li class="project-item active" data-filter-item data-category="network">
   <a href="#">
     <figure class="project-img">
@@ -1176,6 +1176,7 @@ document.getElementById('closeBtn').addEventListener('click', () => {
 </body>
 
 </html>
+
 
 
 
