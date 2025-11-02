@@ -1881,3 +1881,10 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
 }
+.project-list,
+.projects-grid {
+  display: grid !important;
+  grid-template-columns: repeat(5, 1fr) !important; /* ← غيّر 5 إلى 4 لو عايز 4 في الصف */
+  gap: 20px !important;
+}
+
