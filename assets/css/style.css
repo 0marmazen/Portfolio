@@ -1893,7 +1893,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 /* choose number of columns here: change 5 to 4 if you want 4 per row */
 .project-list {
-  grid-template-columns: repeat(5, 1fr) !important;
+  grid-template-columns: repeat(4, 1fr) !important;
 }
 
 /* make sure each project item is visible and behaves as grid child */
@@ -1927,6 +1927,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 @media (min-width: 1200px) {
   .project-list { grid-template-columns: repeat(5, 1fr) !important; } /* desktop */
 }
+
 
 
 
