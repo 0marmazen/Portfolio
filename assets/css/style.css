@@ -1878,56 +1878,6 @@ textarea.form-input::-webkit-resizer { display: none; }
 	 */
 
   .timeline-text { max-width: 700px; }
-/* ===== FORCE GRID LAYOUT FOR PROJECTS (override) ===== */
-
-/* ensure the container uses grid */
-.project-list,
-.projects-grid {
-  display: grid !important;
-  gap: 20px !important;
-  align-items: start !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  list-style: none !important;
-}
-
-/* choose number of columns here: change 5 to 4 if you want 4 per row */
-.project-list {
-  grid-template-columns: repeat(4, 1fr) !important;
-}
-
-/* make sure each project item is visible and behaves as grid child */
-.project-list .project-item,
-.projects-grid .project-item {
-  display: block !important;        /* override display:none */
-  visibility: visible !important;
-  opacity: 1 !important;
-  transform: none !important;
-  animation: none !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
-}
-
-/* image resizing to keep cards consistent */
-.project-list .project-img,
-.projects-grid .project-img {
-  height: 180px !important;        /* adjust as you like */
-}
-
-/* responsive behavior: adapt columns by screen width */
-@media (max-width: 480px) {
-  .project-list { grid-template-columns: 1fr !important; }
-}
-@media (min-width: 481px) and (max-width: 800px) {
-  .project-list { grid-template-columns: repeat(2, 1fr) !important; }
-}
-@media (min-width: 801px) and (max-width: 1199px) {
-  .project-list { grid-template-columns: repeat(3, 1fr) !important; }
-}
-@media (min-width: 1200px) {
-  .project-list { grid-template-columns: repeat(5, 1fr) !important; } /* desktop */
-}
-
 
 
 
