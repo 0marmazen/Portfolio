@@ -1744,7 +1744,7 @@ textarea.form-input::-webkit-resizer { display: none; }
    * PORTFOLIO
    */
 
-  .project-list { grid-template-columns: repeat(5, 1fr); }
+  .project-list { grid-template-columns: repeat(5, 1fr) !important; }
 
 
 
@@ -1887,4 +1887,5 @@ textarea.form-input::-webkit-resizer { display: none; }
   grid-template-columns: repeat(5, 1fr) !important; /* ← غيّر 5 إلى 4 لو عايز 4 في الصف */
   gap: 20px !important;
 }
+
 
